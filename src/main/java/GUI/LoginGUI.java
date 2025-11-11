@@ -55,8 +55,6 @@ public class LoginGUI extends javax.swing.JFrame {
             }
         });
 
-        txtpassword.setText("jPasswordField1");
-
         btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +83,7 @@ public class LoginGUI extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtpassword)))))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnLogin)
@@ -104,12 +102,12 @@ public class LoginGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtpassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(btnLogin)
                 .addGap(55, 55, 55))
         );
 
-        setSize(new java.awt.Dimension(614, 385));
+        setSize(new java.awt.Dimension(651, 396));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -120,7 +118,7 @@ public class LoginGUI extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         String username="Teacher";
-        String password="123";
+        String password="1234";
         if(username.equals(txtusername.getText())&& password.equals(txtpassword.getText())) {
             JOptionPane.showMessageDialog(null, "Login successfully");
         }
