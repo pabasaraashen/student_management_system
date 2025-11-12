@@ -118,7 +118,7 @@ public class LoginGUI extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         String username="Teacher";
-        String password="1234";
+        String password="123";
         if(username.equals(txtusername.getText())&& password.equals(txtpassword.getText())) {
             JOptionPane.showMessageDialog(null, "Login successfully");
         }
