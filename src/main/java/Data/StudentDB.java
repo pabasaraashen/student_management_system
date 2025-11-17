@@ -11,7 +11,7 @@ package Data;
 public class StudentDB implements Istudent {
 
     @Override
-    public void insert() {
+    public void insert(Student student) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
