@@ -10,7 +10,7 @@ package Data;
  */
 public interface Istudent {
 
-    public abstract void insert();
+    public abstract void insert(Student student);
 
     public abstract void view();
 
