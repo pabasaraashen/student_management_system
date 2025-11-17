@@ -9,5 +9,10 @@ package Data;
  * @author pabas
  */
 public interface Istudent {
-    
+
+    public abstract void insert();
+
+    public abstract void view();
+
+    public abstract void search();
 }
