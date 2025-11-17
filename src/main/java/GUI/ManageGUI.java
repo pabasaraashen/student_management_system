@@ -4,11 +4,16 @@
  */
 package GUI;
 
+import Data.Student;
+import Data.StudentDB;
+
 /**
  *
  * @author pabas
  */
 public class ManageGUI extends javax.swing.JFrame {
+    Student student;
+    StudentDB stDB;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageGUI.class.getName());
 
@@ -86,6 +91,11 @@ public class ManageGUI extends javax.swing.JFrame {
 
         btnisert.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnisert.setText("Insert");
+        btnisert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnisertActionPerformed(evt);
+            }
+        });
 
         btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnsearch.setText("Search");
@@ -182,6 +192,26 @@ public class ManageGUI extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(793, 480));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnisertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnisertActionPerformed
+        // TODO add your handling code here:
+        String Firstname=txtfirstname.getText();
+        String Lastname=txtlastname.getText();
+        int age=Integer.parseInt(txtage.getText());
+        int grade=Integer.parseInt(cmdgrade.getSelectedItem().toString());
+        String Gender;
+        if(rdomale.isSelected()){
+            Gender="Male";
+        }
+        else if(rdofemale.isSelected()){
+            Gender="Female";
+        }
+        else{
+            Gender="";
+        }
+        student=new Student(Firstname, Lastname, Gender, age, grade);
+        stDB.insert(student);
+    }//GEN-LAST:event_btnisertActionPerformed
 
     /**
      * @param args the command line arguments
