@@ -11,13 +11,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 /**
  *
  * @author pabas
  */
 public class StudentDB implements Istudent {
-
+Student student;
     File file = new File("E:\\Github\\StudentDetails.txt");
 
     @Override
@@ -43,8 +42,15 @@ public class StudentDB implements Istudent {
     public ArrayList<Student> view() {
         try {
             Scanner scan = new Scanner(file);
-            while(scan.hasNextLine()){
-               String line=scan.nextLine();
+            while (scan.hasNextLine()) {
+                String line = scan.nextLine();
+                String arr[] = line.split(":");
+                String firstname = arr[0];
+                String lastname = arr[1];
+                String Gender = arr[2];
+                int age=Integer.valueOf(arr[3]);
+                int grade=Integer.valueOf(arr[4]);
+                student=new Student(firstname, lastname, Gender, age, grade);
             }
         } catch (FileNotFoundException ex) {
             System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
