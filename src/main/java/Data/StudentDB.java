@@ -19,7 +19,7 @@ public class StudentDB implements Istudent {
         
         File file=new File("E:\\Github\\StudentDetails.txt");
         try {
-            FileWriter filewrite=new FileWriter(file);
+            FileWriter filewrite=new FileWriter(file,true);
             filewrite.write(student.getFirstName()+":"+
                     student.getLastName()+":"+
                     student.getGender()+":"+
