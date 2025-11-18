@@ -25,6 +25,12 @@ public class ManageGUI extends javax.swing.JFrame {
      */
     public ManageGUI() {
         initComponents();
+        tablemodel=new DefaultTableModel();
+        tablemodel.addColumn("First Name");
+        tablemodel.addColumn("Last Name");
+        tablemodel.addColumn("Age");
+        tablemodel.addColumn("Gender");
+        tablemodel.addColumn("Grade");
     }
 
     /**
