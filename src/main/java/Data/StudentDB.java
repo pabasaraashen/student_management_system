@@ -20,11 +20,12 @@ public class StudentDB implements Istudent {
         File file=new File("E:\\Github\\StudentDetails.txt");
         try {
             FileWriter filewrite=new FileWriter(file,true);
-            filewrite.write(student.getFirstName()+":"+
-                    student.getLastName()+":"+
-                    student.getGender()+":"+
-                    student.getAge()+":"+
-                    student.getGrade()+"\n");
+            filewrite.write("First Name: " + student.getFirstName() + "\n" +
+                "Last Name: " + student.getLastName() + "\n" +
+                "Gender: " + student.getGender() + "\n" +
+                "Age: " + student.getAge() + "\n" +
+                "Grade: " + student.getGrade() + "\n\n");
+
             filewrite.close();
             return true;
         } catch (IOException ex) {
