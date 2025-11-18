@@ -31,6 +31,7 @@ public class ManageGUI extends javax.swing.JFrame {
         tablemodel.addColumn("Age");
         tablemodel.addColumn("Gender");
         tablemodel.addColumn("Grade");
+        table1.setModel(tablemodel);
     }
 
     /**
