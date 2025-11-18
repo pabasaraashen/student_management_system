@@ -6,6 +6,7 @@ package GUI;
 
 import Data.Student;
 import Data.StudentDB;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -17,6 +18,7 @@ public class ManageGUI extends javax.swing.JFrame {
     Student student;
     StudentDB stDB=new StudentDB();
     private DefaultTableModel tablemodel;
+    ArrayList<Student> studentlist=new ArrayList<>();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageGUI.class.getName());
 
@@ -112,6 +114,11 @@ public class ManageGUI extends javax.swing.JFrame {
 
         btnview.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnview.setText("View");
+        btnview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnviewActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("First Name");
@@ -228,6 +235,11 @@ public class ManageGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Adding unsuccessfully");
         }
     }//GEN-LAST:event_btnisertActionPerformed
+
+    private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
+        // TODO add your handling code here:
+        studentlist=stDB.view();
+    }//GEN-LAST:event_btnviewActionPerformed
 
     /**
      * @param args the command line arguments
