@@ -112,6 +112,11 @@ public class ManageGUI extends javax.swing.JFrame {
 
         btnsearch.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnsearch.setText("Search");
+        btnsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsearchActionPerformed(evt);
+            }
+        });
 
         btnview.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnview.setText("View");
@@ -248,6 +253,12 @@ public class ManageGUI extends javax.swing.JFrame {
             tablemodel.addRow(new Object[]{firstname, lastname, age, gender, grade});
         }
     }//GEN-LAST:event_btnviewActionPerformed
+
+    private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
+        // TODO add your handling code here:
+        int grade=Integer.valueOf(cmdgrade.getSelectedItem().toString());
+        stDB.search(grade);
+    }//GEN-LAST:event_btnsearchActionPerformed
 
     /**
      * @param args the command line arguments
