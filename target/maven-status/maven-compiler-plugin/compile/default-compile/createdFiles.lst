@@ -5,6 +5,7 @@ Data\Student.class
 GUI\ManageGUI.class
 GUI\LoginGUI$1.class
 GUI\ManageGUI$1.class
+GUI\ManageGUI$3.class
 GUI\LoginGUI.class
 GUI\ManageGUI$2.class
 GUI\LoginGUI$2.class

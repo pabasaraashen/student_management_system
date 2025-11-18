@@ -257,7 +257,16 @@ public class ManageGUI extends javax.swing.JFrame {
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
         // TODO add your handling code here:
         int grade=Integer.valueOf(cmdgrade.getSelectedItem().toString());
-        stDB.search(grade);
+        studentlist=stDB.search(grade);
+        tablemodel.setRowCount(0);
+        for (Student student : studentlist) {
+            String firstname = student.getFirstName();
+            String lastname = student.getLastName();
+            String gender = student.getGender();
+            int age = student.getAge();
+            int grade1 = student.getGrade();
+            tablemodel.addRow(new Object[]{firstname, lastname, age, gender, grade1});
+        }
     }//GEN-LAST:event_btnsearchActionPerformed
 
     /**
