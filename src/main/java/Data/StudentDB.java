@@ -23,7 +23,7 @@ Student student;
     public boolean insert(Student student) {
 
         try {
-            FileWriter filewrite = new FileWriter(file, true);
+            FileWriter filewrite = new FileWriter(file,true);
             filewrite.write(student.getFirstName()+":"+
                     student.getLastName()+":"+ 
                     student.getGender()+":"+
@@ -51,7 +51,7 @@ Student student;
                 String Gender = arr[2];
                 int age=Integer.valueOf(arr[3]);
                 int grade=Integer.valueOf(arr[4]);
-                student=new Student(firstname, lastname, Gender, age, grade);
+                student=new Student(firstname, lastname, Gender, age,grade);
                 studentlist.add(student);
             }
             return studentlist;

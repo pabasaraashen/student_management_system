@@ -236,15 +236,24 @@ public class ManageGUI extends javax.swing.JFrame {
 
     private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
         // TODO add your handling code here:
-        studentlist = stDB.view();
+       tablemodel.setRowCount(0);
+    
+    // Get student list from database
+    studentlist = stDB.view();
+    
+    // Check if list is not null
+    if (studentlist != null) {
         for (Student student : studentlist) {
             String firstname = student.getFirstName();
             String lastname = student.getLastName();
             String gender = student.getGender();
             int age = student.getAge();
             int grade = student.getGrade();
-            tablemodel.addRow(new Object[]{firstname,lastname,age,gender,grade});
+            tablemodel.addRow(new Object[]{firstname, lastname, age, gender, grade});
         }
+    } else {
+        JOptionPane.showMessageDialog(null, "No records found or error reading file");
+    }
     }//GEN-LAST:event_btnviewActionPerformed
 
     /**
