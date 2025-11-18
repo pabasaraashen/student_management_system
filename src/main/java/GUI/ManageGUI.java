@@ -243,6 +243,7 @@ public class ManageGUI extends javax.swing.JFrame {
             String gender = student.getGender();
             int age = student.getAge();
             int grade = student.getGrade();
+            tablemodel.addRow(new Object[]{firstname,lastname,gender,age,grade});
         }
     }//GEN-LAST:event_btnviewActionPerformed
 
