@@ -81,4 +81,9 @@ public class StudentDB implements Istudent {
         return categoryList;
     }
 
+    @Override
+    public boolean update(Student student) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }
