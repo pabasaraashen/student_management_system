@@ -15,11 +15,12 @@ import javax.swing.table.DefaultTableModel;
  * @author pabas
  */
 public class ManageGUI extends javax.swing.JFrame {
+
     Student student;
-    StudentDB stDB=new StudentDB();
+    StudentDB stDB = new StudentDB();
     private DefaultTableModel tablemodel;
-    ArrayList<Student> studentlist=new ArrayList<>();
-    
+    ArrayList<Student> studentlist = new ArrayList<>();
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageGUI.class.getName());
 
     /**
@@ -27,7 +28,7 @@ public class ManageGUI extends javax.swing.JFrame {
      */
     public ManageGUI() {
         initComponents();
-        tablemodel=new DefaultTableModel();
+        tablemodel = new DefaultTableModel();
         tablemodel.addColumn("First Name");
         tablemodel.addColumn("Last Name");
         tablemodel.addColumn("Age");
@@ -212,33 +213,37 @@ public class ManageGUI extends javax.swing.JFrame {
 
     private void btnisertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnisertActionPerformed
         // TODO add your handling code here:
-        String Firstname=txtfirstname.getText();
-        String Lastname=txtlastname.getText();
-        int age=Integer.parseInt(txtage.getText());
-        int grade=Integer.parseInt(cmdgrade.getSelectedItem().toString());
+        String Firstname = txtfirstname.getText();
+        String Lastname = txtlastname.getText();
+        int age = Integer.parseInt(txtage.getText());
+        int grade = Integer.parseInt(cmdgrade.getSelectedItem().toString());
         String Gender;
-        if(rdomale.isSelected()){
-            Gender="Male";
+        if (rdomale.isSelected()) {
+            Gender = "Male";
+        } else if (rdofemale.isSelected()) {
+            Gender = "Female";
+        } else {
+            Gender = "";
         }
-        else if(rdofemale.isSelected()){
-            Gender="Female";
-        }
-        else{
-            Gender="";
-        }
-        student=new Student(Firstname, Lastname, Gender, age, grade);
-        boolean result=stDB.insert(student);
-        if (result){
+        student = new Student(Firstname, Lastname, Gender, age, grade);
+        boolean result = stDB.insert(student);
+        if (result) {
             JOptionPane.showMessageDialog(null, "Adding successfully");
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Adding unsuccessfully");
         }
     }//GEN-LAST:event_btnisertActionPerformed
 
     private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
         // TODO add your handling code here:
-        studentlist=stDB.view();
+        studentlist = stDB.view();
+        for (Student student : studentlist) {
+            String firstname = student.getFirstName();
+            String lastname = student.getLastName();
+            String gender = student.getGender();
+            int age = student.getAge();
+            int grade = student.getGrade();
+        }
     }//GEN-LAST:event_btnviewActionPerformed
 
     /**
