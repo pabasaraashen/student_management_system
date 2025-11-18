@@ -15,14 +15,21 @@ import java.io.IOException;
 public class StudentDB implements Istudent {
 
     @Override
-    public void insert(Student student) {
+    public boolean insert(Student student) {
         
         File file=new File("E:\\GithubStudentDetails.txt");
         try {
-            FileWriter filewriter=new FileWriter(file);
+            FileWriter filewrite=new FileWriter(file);
+            filewrite.write(student.getFirstName()+":"+
+                    student.getLastName()+":"+
+                    student.getGender()+":"+
+                    student.getAge()+":"+
+                    student.getGrade());
+            return true;
         } catch (IOException ex) {
             System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
+        return false;
     }
 
     @Override
