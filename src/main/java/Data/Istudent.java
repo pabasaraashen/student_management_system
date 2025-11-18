@@ -4,6 +4,8 @@
  */
 package Data;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author pabas
@@ -12,7 +14,7 @@ public interface Istudent {
 
     public abstract boolean insert(Student student);
 
-    public abstract void view();
+    public abstract ArrayList<Student> view();
 
     public abstract void search();
 }

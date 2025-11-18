@@ -5,8 +5,12 @@
 package Data;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 
 /**
  *
@@ -14,17 +18,18 @@ import java.io.IOException;
  */
 public class StudentDB implements Istudent {
 
+    File file = new File("E:\\Github\\StudentDetails.txt");
+
     @Override
     public boolean insert(Student student) {
-        
-        File file=new File("E:\\Github\\StudentDetails.txt");
+
         try {
-            FileWriter filewrite=new FileWriter(file,true);
-            filewrite.write("First Name: " + student.getFirstName() + "\n" +
-                "Last Name: " + student.getLastName() + "\n" +
-                "Gender: " + student.getGender() + "\n" +
-                "Age: " + student.getAge() + "\n" +
-                "Grade: " + student.getGrade() + "\n\n");
+            FileWriter filewrite = new FileWriter(file, true);
+            filewrite.write("First Name: " + student.getFirstName() + "\n"
+                    + "Last Name: " + student.getLastName() + "\n"
+                    + "Gender: " + student.getGender() + "\n"
+                    + "Age: " + student.getAge() + "\n"
+                    + "Grade: " + student.getGrade() + "\n\n");
 
             filewrite.close();
             return true;
@@ -35,13 +40,20 @@ public class StudentDB implements Istudent {
     }
 
     @Override
-    public void view() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ArrayList<Student> view() {
+        try {
+            Scanner scan = new Scanner(file);
+            while(scan.hasNextLine()){
+               String line=scan.nextLine();
+            }
+        } catch (FileNotFoundException ex) {
+            System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }
 
     @Override
     public void search() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }
