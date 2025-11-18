@@ -7,6 +7,7 @@ package GUI;
 import Data.Student;
 import Data.StudentDB;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,6 +16,7 @@ import javax.swing.JOptionPane;
 public class ManageGUI extends javax.swing.JFrame {
     Student student;
     StudentDB stDB=new StudentDB();
+    private DefaultTableModel tablemodel;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageGUI.class.getName());
 
