@@ -4,6 +4,10 @@
  */
 package Data;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author pabas
@@ -13,6 +17,12 @@ public class StudentDB implements Istudent {
     @Override
     public void insert(Student student) {
         
+        File file=new File("E:\\GithubStudentDetails.txt");
+        try {
+            FileWriter filewriter=new FileWriter(file);
+        } catch (IOException ex) {
+            System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }
 
     @Override
