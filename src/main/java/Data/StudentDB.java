@@ -42,6 +42,7 @@ Student student;
     public ArrayList<Student> view() {
         try {
             Scanner scan = new Scanner(file);
+            ArrayList<Student> studentlist=new ArrayList<>();
             while (scan.hasNextLine()) {
                 String line = scan.nextLine();
                 String arr[] = line.split(":");
@@ -51,10 +52,13 @@ Student student;
                 int age=Integer.valueOf(arr[3]);
                 int grade=Integer.valueOf(arr[4]);
                 student=new Student(firstname, lastname, Gender, age, grade);
+                studentlist.add(student);
             }
+            return studentlist;
         } catch (FileNotFoundException ex) {
             System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
+        return null;
     }
 
     @Override
