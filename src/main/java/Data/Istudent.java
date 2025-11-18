@@ -17,4 +17,6 @@ public interface Istudent {
     public abstract ArrayList<Student> view();
 
     public abstract ArrayList<Student> search(int grade);
+    
+    public abstract boolean update(Student student);
 }
