@@ -1,6 +1,9 @@
 com\mycompany\student_management_system\Student_management_system.class
-GUI\LoginGUI.class
+Data\StudentDB.class
+Data\Istudent.class
 Data\Student.class
 GUI\ManageGUI.class
 GUI\LoginGUI$1.class
+GUI\ManageGUI$1.class
+GUI\LoginGUI.class
 GUI\LoginGUI$2.class

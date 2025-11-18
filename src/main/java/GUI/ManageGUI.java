@@ -6,6 +6,7 @@ package GUI;
 
 import Data.Student;
 import Data.StudentDB;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,7 +14,7 @@ import Data.StudentDB;
  */
 public class ManageGUI extends javax.swing.JFrame {
     Student student;
-    StudentDB stDB;
+    StudentDB stDB=new StudentDB();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ManageGUI.class.getName());
 
@@ -210,7 +211,13 @@ public class ManageGUI extends javax.swing.JFrame {
             Gender="";
         }
         student=new Student(Firstname, Lastname, Gender, age, grade);
-        stDB.insert(student);
+        boolean result=stDB.insert(student);
+        if (result){
+            JOptionPane.showMessageDialog(null, "Adding successfully");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Adding unsuccessfully");
+        }
     }//GEN-LAST:event_btnisertActionPerformed
 
     /**

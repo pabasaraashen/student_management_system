@@ -17,14 +17,15 @@ public class StudentDB implements Istudent {
     @Override
     public boolean insert(Student student) {
         
-        File file=new File("E:\\GithubStudentDetails.txt");
+        File file=new File("E:\\Github\\StudentDetails.txt");
         try {
             FileWriter filewrite=new FileWriter(file);
             filewrite.write(student.getFirstName()+":"+
                     student.getLastName()+":"+
                     student.getGender()+":"+
                     student.getAge()+":"+
-                    student.getGrade());
+                    student.getGrade()+"\n");
+            filewrite.close();
             return true;
         } catch (IOException ex) {
             System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
