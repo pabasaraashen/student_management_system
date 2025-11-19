@@ -112,7 +112,30 @@ public class StudentDB implements Istudent {
 
     @Override
     public boolean update(Student student) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Student> studentList = view();
+    
+    for (int i = 0; i < studentList.size(); i++) {
+        Student currentStudent = studentList.get(i);  // Changed variable name
+        if (currentStudent.getFirstName().equals(student.getFirstName())) {  // Fixed reference
+            studentList.set(i, student);  // Fixed reference
+            break;
+        }
+    }
+    
+    try {
+        FileWriter filewrite = new FileWriter(file);
+        for (Student s : studentList) {  // Changed loop variable name
+            filewrite.write(s.getFirstName() + ":" + 
+                          s.getLastName() + ":" + 
+                          s.getGender() + ":" + 
+                          s.getAge() + ":" + 
+                          s.getGrade() + "\n");
+        }
+        filewrite.close();
+        return true;
+    } catch (IOException ex) {
+        System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+    }
+    return false;
     }
 }
-    

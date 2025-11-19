@@ -7,6 +7,7 @@ GUI\ManageGUI.class
 GUI\LoginGUI$1.class
 GUI\ManageGUI$3.class
 GUI\LoginGUI.class
+GUI\ManageGUI$6.class
 GUI\ManageGUI$2.class
 com\mycompany\student_management_system\Student_management_system.class
 GUI\ManageGUI$1.class
