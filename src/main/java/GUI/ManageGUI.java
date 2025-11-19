@@ -102,6 +102,11 @@ public class ManageGUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        table1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table1);
 
         btnisert.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -308,6 +313,13 @@ public class ManageGUI extends javax.swing.JFrame {
         }
         student=new Student(Firstname, Lastname, Gender, age, grade);
     }//GEN-LAST:event_btnupdateActionPerformed
+
+    private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model=(DefaultTableModel) table1.getModel();
+        int selectedRow=table1.getSelectedRow();
+        
+    }//GEN-LAST:event_table1MouseClicked
 
     /**
      * @param args the command line arguments
