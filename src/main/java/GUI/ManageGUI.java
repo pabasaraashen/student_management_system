@@ -267,6 +267,13 @@ public class ManageGUI extends javax.swing.JFrame {
         boolean result = stDB.insert(student);
         if (result) {
             JOptionPane.showMessageDialog(null, "Adding successfully");
+            
+             // Clear all input fields after successful insertion
+        txtfirstname.setText("");
+        txtlastname.setText("");
+        txtage.setText("");
+        cmdgrade.setSelectedIndex(0);  // Reset to first grade
+        buttonGroup1.clearSelection(); // Clear radio button selection
         } else {
             JOptionPane.showMessageDialog(null, "Adding unsuccessfully");
         }
