@@ -1,5 +1,5 @@
 
-# Student Management System Java OOP
+# 🎓 Student Management System Java OOP
 
 A desktop application built with Java Swing that demonstrates Object-Oriented Programming principles for managing student records with a simple file-based persistence layer.
 
