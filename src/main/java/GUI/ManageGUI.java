@@ -136,6 +136,11 @@ public class ManageGUI extends javax.swing.JFrame {
         jLabel5.setText("First Name");
 
         btndelete.setText("Delete");
+        btndelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -301,6 +306,12 @@ public class ManageGUI extends javax.swing.JFrame {
         cmdgrade.setSelectedItem(model.getValueAt(selectedRow, 4).toString());
         
     }//GEN-LAST:event_table1MouseClicked
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+        // TODO add your handling code here:
+        String firstname=txtfirstname.getSelectedText();
+        stDB.delete(firstname);
+    }//GEN-LAST:event_btndeleteActionPerformed
 
     /**
      * @param args the command line arguments

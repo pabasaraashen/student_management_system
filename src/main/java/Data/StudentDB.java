@@ -100,7 +100,7 @@ public class StudentDB implements Istudent {
                         + student.getGender() + ":"
                         + student.getAge() + ":"
                         + student.getGrade() + "\n");
-            
+
             }
             filewrite.close();
             return true;
@@ -109,3 +109,5 @@ public class StudentDB implements Istudent {
         }
         return false;
     }
+}
+    
