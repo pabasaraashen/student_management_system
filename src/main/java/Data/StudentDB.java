@@ -81,11 +81,7 @@ public class StudentDB implements Istudent {
         return categoryList;
     }
 
-    @Override
-    public boolean update(Student student) {
-        ArrayList<Student> studentList=view();
-       
-        }
+    
     }
 
 

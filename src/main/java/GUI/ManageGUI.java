@@ -64,7 +64,6 @@ public class ManageGUI extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtfirstname = new javax.swing.JTextField();
         btndelete = new javax.swing.JButton();
-        btnupdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -138,13 +137,6 @@ public class ManageGUI extends javax.swing.JFrame {
 
         btndelete.setText("Delete");
 
-        btnupdate.setText("Update");
-        btnupdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnupdateActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -193,9 +185,7 @@ public class ManageGUI extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addComponent(btndelete)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnupdate)
-                        .addGap(67, 67, 67)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
@@ -231,9 +221,7 @@ public class ManageGUI extends javax.swing.JFrame {
                             .addComponent(btnsearch)
                             .addComponent(btnview))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btndelete)
-                            .addComponent(btnupdate)))
+                        .addComponent(btndelete))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -297,23 +285,6 @@ public class ManageGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnsearchActionPerformed
 
-    private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
-        // TODO add your handling code here:
-        String Firstname = txtfirstname.getText();
-        String Lastname = txtlastname.getText();
-        int age = Integer.parseInt(txtage.getText());
-        int grade = Integer.parseInt(cmdgrade.getSelectedItem().toString());
-        String Gender;
-        if (rdomale.isSelected()) {
-            Gender = "Male";
-        } else if (rdofemale.isSelected()) {
-            Gender = "Female";
-        } else {
-            Gender = "";
-        }
-        student=new Student(Firstname, Lastname, Gender, age, grade);
-    }//GEN-LAST:event_btnupdateActionPerformed
-
     private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
         // TODO add your handling code here:
         DefaultTableModel model=(DefaultTableModel) table1.getModel();
@@ -360,7 +331,6 @@ public class ManageGUI extends javax.swing.JFrame {
     private javax.swing.JButton btndelete;
     private javax.swing.JButton btnisert;
     private javax.swing.JButton btnsearch;
-    private javax.swing.JButton btnupdate;
     private javax.swing.JButton btnview;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmdgrade;
