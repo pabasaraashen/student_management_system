@@ -368,6 +368,14 @@ public class ManageGUI extends javax.swing.JFrame {
         } else {
             Gender = "";
         }
+        student=new Student(Firstname, Lastname, Gender, age, grade);
+        boolean confirm=stDB.update(student);
+        if(confirm){
+            JOptionPane.showMessageDialog(null, "updated successfully");  
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "updated unsuccessfully");
+        }
     }//GEN-LAST:event_btnupdateActionPerformed
 
     /**
