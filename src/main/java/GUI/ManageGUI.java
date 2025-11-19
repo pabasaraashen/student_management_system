@@ -309,14 +309,37 @@ public class ManageGUI extends javax.swing.JFrame {
 
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
-        String firstname=txtfirstname.getSelectedText();
-        boolean confirm=stDB.delete(firstname);
-        if(confirm){
-            JOptionPane.showMessageDialog(null, "deleted successfully");
+         // Get firstname from text field (NOT the selected text)
+    String firstname = txtfirstname.getText();
+
+    // Delete from file
+    boolean confirm = stDB.delete(firstname);
+         
+    if(confirm){
+        JOptionPane.showMessageDialog(null, "Deleted successfully");
+        
+        // Refresh table view after deletion
+        tablemodel.setRowCount(0);  
+        studentlist = stDB.view();
+        for (Student student : studentlist) {
+            tablemodel.addRow(new Object[]{
+                student.getFirstName(),
+                student.getLastName(),
+                student.getAge(),
+                student.getGender(),
+                student.getGrade()
+            });
         }
-        else{
-            JOptionPane.showMessageDialog(null, "deleted unsuccessfully");
-        }
+
+        // Clear input fields
+        txtfirstname.setText("");
+        txtlastname.setText("");
+        txtage.setText("");
+        buttonGroup1.clearSelection();
+    }
+    else{
+        JOptionPane.showMessageDialog(null, "Delete failed");
+    }
     }//GEN-LAST:event_btndeleteActionPerformed
 
     /**
