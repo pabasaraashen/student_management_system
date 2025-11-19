@@ -24,7 +24,7 @@ public class StudentDB implements Istudent {
     public boolean insert(Student student) {
 
         try {
-            FileWriter filewrite = new FileWriter(file, true);
+            FileWriter filewrite = new FileWriter(file);
             filewrite.write(student.getFirstName() + ":"
                     + student.getLastName() + ":"
                     + student.getGender() + ":"
