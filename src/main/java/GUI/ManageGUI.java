@@ -356,6 +356,18 @@ public class ManageGUI extends javax.swing.JFrame {
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
         // TODO add your handling code here:
+        String Firstname = txtfirstname.getText();
+        String Lastname = txtlastname.getText();
+        int age = Integer.parseInt(txtage.getText());
+        int grade = Integer.parseInt(cmdgrade.getSelectedItem().toString());
+        String Gender;
+        if (rdomale.isSelected()) {
+            Gender = "Male";
+        } else if (rdofemale.isSelected()) {
+            Gender = "Female";
+        } else {
+            Gender = "";
+        }
     }//GEN-LAST:event_btnupdateActionPerformed
 
     /**
