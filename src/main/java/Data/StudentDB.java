@@ -88,7 +88,24 @@ public class StudentDB implements Istudent {
             Student student = studentList.get(i);
             if (student.getFirstName().equals(firstname)) {
                 studentList.remove(i);
+                break;
             }
         }
 
+        try {
+            FileWriter filewrite = new FileWriter(file);
+            for (Student student : studentList) {
+                filewrite.write(student.getFirstName() + ":"
+                        + student.getLastName() + ":"
+                        + student.getGender() + ":"
+                        + student.getAge() + ":"
+                        + student.getGrade() + "\n");
+            
+            }
+            filewrite.close();
+            return true;
+        } catch (IOException ex) {
+            System.getLogger(StudentDB.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        return false;
     }
