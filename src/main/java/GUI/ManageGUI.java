@@ -310,7 +310,13 @@ public class ManageGUI extends javax.swing.JFrame {
     private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
         String firstname=txtfirstname.getSelectedText();
-        stDB.delete(firstname);
+        boolean confirm=stDB.delete(firstname);
+        if(confirm){
+            JOptionPane.showMessageDialog(null, "deleted successfully");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "deleted unsuccessfully");
+        }
     }//GEN-LAST:event_btndeleteActionPerformed
 
     /**
