@@ -83,10 +83,12 @@ public class StudentDB implements Istudent {
 
     @Override
     public boolean delete(String firstname) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Student> studentList = view();
+        for (int i = 0; i < studentList.size(); i++) {
+            Student student = studentList.get(i);
+            if (student.getFirstName().equals(firstname)) {
+                studentList.remove(i);
+            }
+        }
+
     }
-
-    
-    }
-
-
