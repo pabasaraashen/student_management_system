@@ -318,6 +318,16 @@ public class ManageGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel model=(DefaultTableModel) table1.getModel();
         int selectedRow=table1.getSelectedRow();
+        txtfirstname.setText(model.getValueAt(selectedRow, 0).toString());
+        txtlastname.setText(model.getValueAt(selectedRow, 1).toString());
+        txtage.setText(model.getValueAt(selectedRow, 2).toString());
+        if(model.getValueAt(selectedRow, 3).toString().equals("Male")){
+            rdomale.setSelected(true);
+        }
+        else{
+            rdofemale.setSelected(true);
+        }
+        cmdgrade.setSelectedItem(model.getValueAt(selectedRow, 4).toString());
         
     }//GEN-LAST:event_table1MouseClicked
 
