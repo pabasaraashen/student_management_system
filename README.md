@@ -129,4 +129,12 @@ Jane:Smith:Female:16:11
 - NetBeans IDE (recommended) or any Java IDE
 
 
+<img width="1920" height="1080" alt="Screenshot (158)" src="https://github.com/user-attachments/assets/f633e1a8-8cd1-4439-97b7-1483c8a9ec01" />
+
+<img width="1920" height="1080" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/0aea7a56-df50-4dd7-841a-0469e1d38c05" />
+
+<img width="1920" height="1080" alt="Screenshot (157)" src="https://github.com/user-attachments/assets/350e9875-10f7-455c-9da9-93e5bd507e64" />
+
+<img width="1920" height="1080" alt="Screenshot (160)" src="https://github.com/user-attachments/assets/415901fb-7b0d-4e86-b005-0e91f754b3b6" />
+
 
